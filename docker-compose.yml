@@ -1,0 +1,19 @@
+version: '3.6'
+
+services:
+  go.lib.unb.ca:
+    build:
+      context: .
+    restart: always
+    container_name: go.lib.unb.ca
+    expose:
+      - "80"
+    ports:
+      - "3100:80"
+    networks:
+      - go.lib.unb.ca
+
+networks:
+  go.lib.unb.ca:
+    name: go.lib.unb.ca
+
