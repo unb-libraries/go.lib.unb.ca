@@ -1,7 +1,7 @@
 # go.lib.unb.ca : Instance Repository
 [![Build Status](https://travis-ci.com/unb-libraries/go.lib.unb.ca.svg?branch=prod)](https://travis-ci.com/unb-libraries/go.lib.unb.ca) [![GitHub license](https://img.shields.io/github/license/unb-libraries/go.lib.unb.ca)](https://github.com/unb-libraries/go.lib.unb.ca/blob/dev/LICENSE) ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/go.lib.unb.ca)
 
-This repository contains all assets used to test, build, and deploy the go.lib.unb.ca database server, the database that drives [pos.lib.unb.ca](https://pos.lib.unb.ca).
+This repository contains all assets used to test, build, and deploy the go.lib.unb.ca application, the short URL redirector at UNB Libraries.
 
 ## How To Deploy
 Local deployment, development and testing is accelerated via [dockworker](https://github.com/unb-libraries/dockworker), our unified framework of [Robo](https://robo.li/) commands that streamline local development of our application on Linux or OSX.
