@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+    tier: go
+    uri: go.lib.unb.ca
+  name: go-lib-unb-ca
+  namespace: prod
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  minReadySeconds: 30
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tier: go
+        uri: go.lib.unb.ca
+    spec:
+      containers:
+        -
+          env:
+            -
+              name: DEPLOY_ENV
+              value: prod
+          image: "||DEPLOYMENTIMAGE||"
+          imagePullPolicy: Always
+          name: go-lib-unb-ca
+          ports:
+            -
+              containerPort: 80
+      priorityClassName: high-priority-services
+      restartPolicy: Always

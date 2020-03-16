@@ -1,0 +1,20 @@
+dockworker:
+  version: '3.0'
+  application:
+    name: go.lib.unb.ca
+    finish_marker: '98_report_startup_time'
+    project_prefix: LIB
+    upstream_images:
+      - unblibraries/nginx:alpine
+  deployment:
+    environments:
+      - prod
+  github:
+    repo: go.lib.unb.ca
+    owner: unb-libraries
+  image:
+    push_branches:
+      - prod
+    name: unblibraries/go.lib.unb.ca
+    date_tag_image: true
+    repository: dockercloud
