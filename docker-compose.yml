@@ -10,6 +10,9 @@ services:
       - "80"
     ports:
       - "3100:80"
+    environment:
+      - LOCAL_HOSTNAME=local-go.lib.unb.ca
+      - LOCAL_PORT=3100
     networks:
       - go.lib.unb.ca
 

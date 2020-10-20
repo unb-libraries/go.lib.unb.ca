@@ -2,7 +2,7 @@ dockworker:
   version: '3.0'
   application:
     name: go.lib.unb.ca
-    finish_marker: '98_report_startup_time'
+    finish_marker: '99_z_notify_user_URI'
     project_prefix: LIB
     upstream_images:
       - unblibraries/nginx:alpine
