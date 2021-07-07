@@ -1,5 +1,3 @@
-version: '3.6'
-
 services:
   go.lib.unb.ca:
     build:
