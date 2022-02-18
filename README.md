@@ -1,5 +1,5 @@
 # [go.lib.unb.ca](https://go.lib.unb.ca/) : Lean Instance Repository
-[![Build Status](https://github.com/unb-libraries/go.lib.unb.ca/actions/workflows/test-suite.yaml/badge.svg?branch=prod)](https://github.com/unb-libraries/go.lib.unb.ca/actions/workflows/test-suite.yaml)
+[![Build Status](https://github.com/unb-libraries/go.lib.unb.ca/actions/workflows/deployment-workflow.yaml/badge.svg?branch=prod)](https://github.com/unb-libraries/go.lib.unb.ca/actions/workflows/deployment-workflow.yaml)
 [![GitHub license](https://img.shields.io/github/license/unb-libraries/go.lib.unb.ca)](https://github.com/unb-libraries/go.lib.unb.ca/blob/prod/LICENSE)
 ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/go.lib.unb.ca?label=lean%20repo%20size)
 
@@ -8,14 +8,8 @@ This repository contains the assets used to test, build, and deploy the go.lib.u
 ## Deploy this Application Yourself!
 Local deployment, development and testing of go.lib.unb.ca is easy, as we leverage [dockworker](https://github.com/unb-libraries/dockworker), our unified framework of [Robo](https://robo.li/) commands that streamline local development of our application on Linux or OSX.
 
-### Step 1: Install Dockworker Dependencies
-In your local development environment, several 'one time' dependency installations are required to deploy all applications with dockworker. Some or all of these may already be installed in your environment.
-
-* [PHP7](https://php.org/)
-* PHP Extensions : php-curl php-dom php-gd php-mbstring php-posix php-yaml php-zip
-* [composer](https://getcomposer.org/)
-* [docker](https://www.docker.com): Installation steps [are located here](https://docs.docker.com/install/).
-* [docker-compose](https://docs.docker.com/compose/): Installation steps [are located here](https://docs.docker.com/compose/install/).
+### Step 1: Install Dockworker's Dependencies
+In your local development environment, a minimal number of 'one time' dependencies are required to deploy applications with dockworker. Some or all of these may already be installed in your environment; see the list of dependencies and installation instructions [here](https://github.com/unb-libraries/dockworker/blob/4.x/docs/prerequisites.md).
 
 ### Step 2: Deploy
 With all dependencies installed, you are ready to deploy any of our applications locally and and begin development:
