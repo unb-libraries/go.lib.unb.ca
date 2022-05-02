@@ -2,7 +2,7 @@ services:
   go.lib.unb.ca:
     build:
       context: .
-    restart: always
+    restart: unless-stopped
     container_name: go.lib.unb.ca
     expose:
       - "80"
@@ -13,8 +13,6 @@ services:
       - LOCAL_PORT=3100
     networks:
       - go.lib.unb.ca
-
 networks:
   go.lib.unb.ca:
     name: go.lib.unb.ca
-
