@@ -1,9 +1,9 @@
 services:
-  go.lib.unb.ca:
+  go-lib-unb-ca:
     build:
       context: .
     restart: unless-stopped
-    container_name: go.lib.unb.ca
+    container_name: go-lib-unb-ca
     expose:
       - "80"
     ports:

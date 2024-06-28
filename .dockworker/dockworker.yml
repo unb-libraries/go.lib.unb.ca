@@ -1,24 +1,49 @@
 dockworker:
-  version: '5'
+  version: '6'
   application:
-    name: go.lib.unb.ca
-    finish_marker: '99_z_notify_user_URI'
-    project_prefix: LIB
-    upstream_images:
-      - ghcr.io/unb-libraries/nginx:1.x
-    uuid: 3100
-  deployment:
-    environments:
+    name: UNB Link Shortener
+    uri: https://go.lib.unb.ca
+    description: >
+      UNB Link Shortener.
+    topics:
+     - links
+    identifiers:
+      id: go.lib.unb.ca
+      slug: go-lib-unb-ca
+      short_slug: golib
+      uuid: 3100
+    framework:
+      name: nginx
+      version: 1
+      startup_finished_marker: 99_z_notify_user_URI
+      endpoint:
+        name: http
+        port: 80
+        readiness_timeout: 15
+    license:
+      license: MIT
+      holder: University of New Brunswick Libraries
+    shell:
+      path: /bin/sh
+  endpoints:
+    env:
       - prod
-    workflow:
-      source: dockworker
-      type: deployment-workflow
-  github:
-    repo: go.lib.unb.ca
-    owner: unb-libraries
-  image:
-    push_branches:
-      - prod
-    name: ghcr.io/unb-libraries/go.lib.unb.ca
-    date_tag_image: true
-    repository: ghcr
+    deployments:
+      go-lib-unb-ca:
+        default: true
+        managed: true
+        name: go-lib-unb-ca
+  workflows:
+    vcs:
+      type: github
+      owner: unb-libraries
+      name: go.lib.unb.ca
+    jira:
+      project_keys:
+        - LIB
+    image:
+      name: ghcr.io/unb-libraries/go.lib.unb.ca
+      parent: ghcr.io/unb-libraries/nginx:2.x
+      repository: GitHub
+      push-branches:
+        - prod

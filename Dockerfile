@@ -1,12 +1,11 @@
-FROM ghcr.io/unb-libraries/nginx:1.x
+FROM ghcr.io/unb-libraries/nginx:3.x
 MAINTAINER UNB Libraries <libsupport@unb.ca>
 
 # Add package conf.
 COPY ./build /build
 RUN cp -r /build/scripts/container/* /scripts/ && \
-  mv /build/nginx/app.conf /etc/nginx/conf.d/app.conf && \
-  mv /build/nginx/redirect-map.conf /etc/nginx/redirect-map.conf && \
-  rm -rf /build
+  $RSYNC_COPY /build/conf/nginx/app.conf "$NGINX_APP_CONF_FILE" && \
+  $RSYNC_COPY /build/conf/nginx/daemon "$NGINX_CONFD_DIR/"
 
 # Container metadata.
 LABEL ca.unb.lib.generator="nginx" \
