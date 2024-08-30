@@ -14,7 +14,6 @@
   "name": "unb-libraries/go.lib.unb.ca",
   "prefer-stable": true,
   "require-dev": {
-    "unb-libraries/dockworker": "^6",
     "unb-libraries/dockworker-daemon": "^6"
   },
   "scripts": {
