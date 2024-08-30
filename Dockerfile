@@ -1,5 +1,4 @@
 FROM ghcr.io/unb-libraries/nginx:3.x
-MAINTAINER UNB Libraries <libsupport@unb.ca>
 
 # Add package conf.
 COPY ./build /build
@@ -20,4 +19,5 @@ LABEL ca.unb.lib.generator="nginx" \
   org.label-schema.vcs-url="https://github.com/unb-libraries/go.lib.unb.ca" \
   org.label-schema.vendor="University of New Brunswick Libraries" \
   org.label-schema.version=$VERSION \
+  org.opencontainers.image.authors="UNB Libraries <libsupport@unb.ca>" \
   org.opencontainers.image.source="https://github.com/unb-libraries/go.lib.unb.ca"
