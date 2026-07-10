@@ -13,7 +13,6 @@ jobs:
       deploy-branches: '["prod"]'
       image-name: 'ghcr.io/unb-libraries/go.lib.unb.ca'
       k8s-deployment-name: 'go-lib-unb-ca'
-      push-branches: '["prod"]'
       platforms: 'linux/amd64'
     secrets:
       KUBE_CONFIG: ${{ secrets.KUBE_CONFIG_DATA }}
