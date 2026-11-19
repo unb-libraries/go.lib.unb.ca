@@ -1,4 +1,4 @@
-FROM ghcr.io/unb-libraries/nginx:3.x
+FROM ghcr.io/unb-libraries/nginx:3.24.x
 
 # Add package conf.
 COPY ./build /build
