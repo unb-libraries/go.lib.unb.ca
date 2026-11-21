@@ -7,6 +7,9 @@ RUN cp -r /build/scripts/container/* /scripts/ && \
   $RSYNC_COPY /build/conf/nginx/daemon "$NGINX_CONFD_DIR/"
 
 # Container metadata.
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
 LABEL ca.unb.lib.generator="nginx" \
   org.opencontainers.image.title="go.lib.unb.ca" \
   org.opencontainers.image.description="go.lib.unb.ca is the short URL forwarding application at UNB Libraries." \
